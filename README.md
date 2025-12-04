@@ -1,6 +1,6 @@
 # SmartFolio
 
-## ✨ Features
+## Features
 
 - **Real Market Data** - Fetches actual historical prices from Yahoo Finance
 - **Quantitative Analysis** - Computes real finance metrics (returns, volatility, Sharpe ratio, drawdown)
