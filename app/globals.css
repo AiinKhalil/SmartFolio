@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 11, 30;
+  --background-end-rgb: 13, 21, 37;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    135deg,
+    rgb(var(--background-start-rgb)) 0%,
+    rgb(26, 27, 62) 25%,
+    rgb(var(--background-end-rgb)) 50%,
+    rgb(var(--background-start-rgb)) 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 136, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 136, 0.5);
+}
+
+/* Glassmorphism card base */
+@layer components {
+  .glass-card {
+    @apply bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl;
+    @apply border border-white/[0.1] rounded-2xl;
+    @apply shadow-xl shadow-black/20;
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-300 ease-out;
+    @apply hover:border-white/[0.2] hover:shadow-2xl hover:shadow-neon-green/5;
+    @apply hover:translate-y-[-2px];
+  }
+
+  .neon-text {
+    @apply text-neon-green drop-shadow-[0_0_10px_rgba(0,255,136,0.5)];
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-neon-green via-neon-blue to-neon-purple;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl;
+    @apply bg-white/[0.05] border border-white/[0.1];
+    @apply text-white placeholder:text-white/40;
+    @apply focus:outline-none focus:border-neon-green/50 focus:ring-1 focus:ring-neon-green/30;
+    @apply transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-semibold;
+    @apply bg-gradient-to-r from-neon-green/90 to-aurora-500;
+    @apply text-midnight-950 shadow-lg shadow-neon-green/20;
+    @apply hover:shadow-xl hover:shadow-neon-green/30 hover:scale-[1.02];
+    @apply active:scale-[0.98];
+    @apply transition-all duration-200;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  .stat-label {
+    @apply text-sm text-white/60 uppercase tracking-wider;
+  }
+
+  .metric-positive {
+    @apply text-neon-green;
+  }
+
+  .metric-negative {
+    @apply text-red-400;
+  }
+
+  .metric-neutral {
+    @apply text-amber-400;
+  }
+}
+
+/* Animated background orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: float 8s ease-in-out infinite;
+}
+
+.bg-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.4), transparent);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.bg-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.3), transparent);
+  top: 50%;
+  right: -50px;
+  animation-delay: 2s;
+}
+
+.bg-orb-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.3), transparent);
+  bottom: -100px;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+/* Health score gauge animation */
+@keyframes score-fill {
+  from {
+    stroke-dashoffset: 283;
+  }
+}
+
+.score-ring {
+  animation: score-fill 1.5s ease-out forwards;
+}
+
+/* Skeleton loading */
+.skeleton {
+  @apply animate-pulse bg-white/10 rounded;
+}
+
+/* Chart tooltips */
+.recharts-tooltip-wrapper {
+  @apply outline-none;
+}
+
+.custom-tooltip {
+  @apply glass-card p-3 text-sm;
+}
+
