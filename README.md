@@ -1,10 +1,4 @@
-# AI Portfolio Doctor
-
-> Paste your stock/ETF portfolio and get an instant, math-backed diagnosis of its risk, diversification, and health, plus plain-English recommendations.
-
-![AI Portfolio Doctor](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=flat-square&logo=tailwindcss)
+# SmartFolio
 
 ## ✨ Features
 
@@ -16,13 +10,12 @@
 - **AI-Powered Insights** - Natural language explanations and recommendations (via OpenAI)
 - **Beautiful Dashboard** - Modern, glassmorphic FinTech UI with interactive charts
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
 - Node.js 18+ 
 - npm or yarn
-- OpenAI API key (optional, for AI explanations)
 
 ### Installation
 
@@ -37,12 +30,7 @@ cd SmartFolio
 npm install
 ```
 
-3. Create a `.env.local` file with your OpenAI API key:
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-```
-
-> Note: The app works without an OpenAI key, but will show a fallback analysis instead of AI-generated insights.
+> Note: The app works currently works without an OpenAI key, but will show a fallback analysis instead of AI-generated insights. This WILL change for the future!
 
 4. Run the development server:
 ```bash
@@ -51,7 +39,7 @@ npm run dev
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📊 Usage
+## Usage
 
 Enter your portfolio holdings in the text area using this format:
 
@@ -71,9 +59,9 @@ TLT 0.2
 
 Click "Analyze Portfolio" to get your analysis!
 
-## 🧮 Finance Math
+## Finance Math
 
-All quantitative calculations are performed deterministically in TypeScript:
+All quantitative calculations are performed in TypeScript:
 
 ### Per-Asset Metrics
 - **Daily Log Returns**: `r_t = ln(P_t / P_{t-1})`
@@ -125,7 +113,7 @@ SmartFolio/
 └── package.json
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
@@ -138,11 +126,6 @@ SmartFolio/
 
 This tool is for **educational purposes only**. It is not financial advice. Past performance does not guarantee future results. Always consult a licensed financial advisor before making investment decisions.
 
-## 📝 License
 
-MIT License - feel free to use this for your portfolio projects!
-
----
-
-Built with ❤️ as a portfolio project demonstrating full-stack development, quantitative finance, and product design skills.
+Built as a portfolio project demonstrating full-stack development, quantitative finance, and product design skills.
 
