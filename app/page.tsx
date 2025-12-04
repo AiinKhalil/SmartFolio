@@ -308,7 +308,7 @@ export default function Home() {
       <footer className="border-t border-white/10 py-8 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-white/40 text-sm">
-            Built with Next.js, TypeScript, and ❤️ •{" "}
+            Built with Next.js and TypeScript •{" "}
             <span className="text-white/60">SmartFolio</span>
           </p>
           <p className="text-white/30 text-xs mt-2">
