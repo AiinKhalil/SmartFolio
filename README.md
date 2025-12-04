@@ -83,36 +83,6 @@ Composite 0-100 score based on:
 - Drawdown score (20%)
 - Sharpe ratio score (30%)
 
-## 🏗️ Project Structure
-
-```
-SmartFolio/
-├── app/
-│   ├── api/
-│   │   └── analyzePortfolio/
-│   │       └── route.ts      # Main API endpoint
-│   ├── globals.css           # Tailwind + custom styles
-│   ├── layout.tsx            # Root layout
-│   └── page.tsx              # Main page component
-├── components/
-│   ├── PortfolioInputCard.tsx
-│   ├── MetricsOverview.tsx
-│   ├── RiskGauge.tsx
-│   ├── DiversificationChart.tsx
-│   ├── SectorAllocationChart.tsx
-│   ├── DrawdownChart.tsx
-│   ├── DiagnosisPanel.tsx
-│   ├── LoadingState.tsx
-│   └── ErrorAlert.tsx
-├── lib/
-│   ├── types.ts              # TypeScript interfaces
-│   ├── parser.ts             # Portfolio text parser
-│   ├── finance.ts            # Finance math functions
-│   ├── yahoo.ts              # Yahoo Finance integration
-│   └── llm.ts                # OpenAI integration
-└── package.json
-```
-
 ## Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
