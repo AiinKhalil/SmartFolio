@@ -110,11 +110,20 @@ export default function PortfolioInputCard({
         <button
           type="submit"
           disabled={isLoading || !holdingsText.trim()}
-          className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+          className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+          style={
             holdingsText.trim() && !isLoading
-              ? "bg-gradient-to-r from-neon-green to-aurora-500 text-midnight-950 shadow-lg shadow-neon-green/30 hover:shadow-xl hover:shadow-neon-green/40 hover:scale-[1.02] active:scale-[0.98] animate-glow"
-              : "bg-white/10 text-white/40 cursor-not-allowed"
-          }`}
+              ? {
+                  background: "linear-gradient(to right, #00ff88, #14b8a6)",
+                  color: "#0a0b1e",
+                  boxShadow: "0 10px 25px rgba(0, 255, 136, 0.3)",
+                }
+              : {
+                  background: "rgba(255, 255, 255, 0.1)",
+                  color: "rgba(255, 255, 255, 0.4)",
+                  cursor: "not-allowed",
+                }
+          }
         >
           {isLoading ? (
             <>
